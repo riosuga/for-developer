@@ -131,6 +131,14 @@
 	//     });
 	// });
   </script>
+
+  <script type="text/javascript">
+    function updateScroll(i){
+      var element = document.getElementById("container");
+      element.scrollTop = element.scrollHeight;
+    }
+  </script>
+  
   <script type="text/javascript">
   	var i = $('#form-step2 :input').length + 1;
 
@@ -149,6 +157,8 @@
 	        return false;
 	    });
 	});
+
+  updateScroll();
   </script>
  
 </html>
