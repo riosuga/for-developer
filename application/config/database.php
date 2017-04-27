@@ -89,10 +89,10 @@ $db['default'] = array(
 
 // $db['oracle'] = array(
 // 	'dsn'	=> '',
-// 	'hostname' => '10.0.4.124:1521/dboltp',
+// 	'hostname' => '99.9.9.9/hr',
 // 	'username' => 'APPDEV',
-// 	'password' => 'dboltp120appdev',
-// 	'database' => 'dbekspor',
+// 	'password' => 'dboltp',
+// 	'database' => 'eksporx',
 // 	'dbdriver' => 'oci8',
 // 	'dbprefix' => '',
 // 	'pconnect' => TRUE,

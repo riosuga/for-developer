@@ -18,8 +18,8 @@
   </head> 
   <body>
   	<div class="col-lg-6">
-  		<form>
-  			<div class="form-group">
+  		<form id="my_form">
+  			<!-- <div class="form-group">
   				<label>Nama</label>
   				<input type="text" name="nama" class="form-control" id="nama">
   			</div>
@@ -29,14 +29,22 @@
   			</div>
   			<div class="form-group">
   				<label>Hobi</label>
-  				<input type="text" name="hobi" class="form-control" id="hobi">
-  			</div>
-  			<div class="form-group">
+  				<input type="text" name="hobi" class="form-control" id="hobi" value="1">
+  			</div> -->
+  			<!-- <div class="form-group">
   				<input type="text" id="member" name="member" value="">Number of members: (max. 10)<br />
 				<a href="#" id="filldetails" onclick="addFields()">Fill Details</a>
+			</div> -->
+			<!-- <div class="form-group">
+				<div id="container" class="form-group"></div>
+			</div> -->
+			<div class="form-group">
+				<div id="container"></div>
 			</div>
 			<div class="form-group">
-				<div id="container" class="form-group"></div>
+			    <label>Tambah Orang</label>
+				<!-- <button id="add_btn" type="button" class="btn btn-default" onclick="addFieldsManual()">add</button> -->
+				<button id="add_btn" type="button" class="btn btn-default">add</button>
 			</div>
   			<button type="submit" class="btn btn-default">Submit</button>
   		</form>
@@ -51,62 +59,96 @@
   <script src="<?php echo base_url('assets/datatables/js/dataTables.bootstrap.js')?>"></script>
   <script src="<?php echo base_url('assets/bootstrap-datepicker/js/bootstrap-datepicker.min.js')?>"></script>
   <script type="text/javascript">
-        function addFields(){
-            var number = document.getElementById("member").value;
-            var container = document.getElementById("container");
-            while (container.hasChildNodes()) {
-                container.removeChild(container.lastChild);
-            }
-            for (i=0;i<number;i++){
-                // container.appendChild(document.createTextNode("Member " + (i+1)));
-                // container.appendChild(document.createElement("LABEL").setAttribute(""));
-                var x = document.createElement("LABEL");
-                var t = document.createTextNode("Member");
-                x.setAttribute("for","member");
-                x.appendChild(t);
-                container.appendChild(x);
-                var input = document.createElement("input");
-                input.type = "text";
-                input.className ="form-control";
-                input.id ='member'+(i+1);
-                input.name = 'member'+(i+1);
-                container.appendChild(input);
-                container.appendChild(document.createElement("br"));
-            }
-        }
+        // function addFields(){
+        // 	//gak kanggo
+        //     var number = document.getElementById("member").value;
+        //     var container = document.getElementById("container");
+        //     while (container.hasChildNodes()) {
+        //         container.removeChild(container.lastChild);
+        //     }
+        //     for (i=0;i<number;i++){
+        //         // container.appendChild(document.createTextNode("Member " + (i+1)));
+        //         // container.appendChild(document.createElement("LABEL").setAttribute(""));
+        //         var x = document.createElement("LABEL");
+        //         var t = document.createTextNode("Member");
+        //         x.setAttribute("for","member");
+        //         x.appendChild(t);
+        //         container.appendChild(x);
+        //         var input = document.createElement("input");
+        //         input.type = "text";
+        //         input.className ="form-control";
+        //         input.id ='member'+(i+1);
+        //         input.name = 'member'+(i+1);
+        //         container.appendChild(input);
+        //         container.appendChild(document.createElement("br"));
+        //     }
+        // }
   </script>
   <script type="text/javascript">
-  	function addFieldsManual(){
-  		var container = document.getElementById('container');
-  		var div = document.createElement('div');
-  		div.id = 'container';
-  		div.className = 'form-group';
-  		var label = document.createElement('label');
-  		var tulisan = document.createTextNode('NIP');
-  		label.appendChild(tulisan);
-  		container.appendChild(label);
-  		var input = document.createElement('input');
-  		input.type = 'text';
-  		input.className ='form-control';
-  		input.name = 'nip[]';
-  		input.id = 'nip';
-  		container.appendChild(input);
-  		container.appendChild(document.documentElement('br'));
-  		var label2 = document.createElement('label');
-  		var tulisan2 = document.createTextNode('Nama');
-  		label2.appendChild(tulisan2);
-  		container.appendChild(label2);
-  		var input2 = document.createElement('input');
-  		input2.className = 'form-control';
-  		input2.type ='text';
-  		input2.name = 'nmBC[]';
-  		input.id = 'nmBC';
-  		container.appendChild(input2);
-  		container.appendChild(document.documentElement('br'));
-  	}
-
-  	function removeFieldsManual(){
+ //  	function addFieldsManual(){
+ //  		//gak kanggo
+ //  		var container = document.getElementById('container');
+  
+ //  		var label = document.createElement('label');
+ //  		var tulisan = document.createTextNode('NIP');
+ //  		label.appendChild(tulisan);
+ //  		container.appendChild(label);
+ //  		var input = document.createElement('input');
+ //  		input.type = 'text';
+ //  		input.className ='form-control';
+ //  		input.name = 'nip[]';
+ //  		input.id = 'nip';
+ //  		container.appendChild(input);
+ //  		container.appendChild(document.createElement('br'));
   		
-  	}
+ //  		var label2 = document.createElement('label');
+ //  		var tulisan2 = document.createTextNode('Nama');
+ //  		label2.appendChild(tulisan2);
+ //  		container.appendChild(label2);
+ //  		var input2 = document.createElement('input');
+ //  		input2.className = 'form-control';
+ //  		input2.type ='text';
+ //  		input2.name = 'nmBC[]';
+ //  		input.id = 'nmBC';
+ //  		container.appendChild(input2);
+ //  		container.appendChild(document.createElement('br'));
+  		
+ //  		var button = document.createElement('button');
+ //  		var tulisanBtn = document.createTextNode('Hapus');
+ //  		button.type ='button';
+ //  		button.setAttribute('class', 'rmvBtn');
+ //  		button.appendChild(tulisanBtn);
+ //  		container.appendChild(button);
+ //  		container.appendChild(document.createElement('br'));
+ //  		container.appendChild(document.createElement('br'));
+ //  		return false;
+ //  	}
+
+ //  	$("#my_form").on('click', '.rmvBtn', function () {
+	//     $(this).parent().fadeOut(300, function () {
+	//         $(this).empty();
+	//         return false;
+	//     });
+	// });
   </script>
+  <script type="text/javascript">
+  	var i = $('#form-step2 :input').length + 1;
+
+	//add input
+	$('#add_btn').click(function () {
+	    $('<div id="'+i+'"><div class="form-group"><label>NIP</label><input class="form-control" name="nip[]" id="nip'+i+'"/></div>'+
+	    '<div class="form-group"><label>Nama Petugas BC</label><input class="form-control" name="nmBC[]" id="nmBC'+i+'"/></div>'+
+	    '<button type ="button" class="rmvBtn btn btn-danger" id="rmvBtnBc'+i+'">Hapus</button></div>').fadeIn("slow").appendTo('#container');
+	    i++;
+	    return false;
+	});
+	//fadeout selected item and remove
+	$("#my_form").on('click', '.rmvBtn', function () {
+	    $(this).parent().fadeOut(300, function () {
+	        $(this).empty();
+	        return false;
+	    });
+	});
+  </script>
+ 
 </html>
