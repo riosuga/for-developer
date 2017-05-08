@@ -12,7 +12,8 @@ class Person extends CI_Controller {
 	public function index()
 	{
 		$this->load->helper('url');
-		$this->load->view('person_view');
+		$data['body'] = $this->load->view('person_views', null, true);
+		$this->load->view('person_view',$data);
 	}
 
 	public function ajax_list()

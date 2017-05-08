@@ -16,7 +16,8 @@
     <![endif]-->
     </head> 
 <body>
-    <div class="container">
+<?php echo $body; ?>
+   <!--  <div class="container">
         <h1 style="font-size:20pt">Ajax CRUD with Bootstrap modals and Datatables</h1>
 
         <h3>Person Data</h3>
@@ -52,7 +53,7 @@
             </tr>
             </tfoot>
         </table>
-    </div>
+    </div> -->
 
 <script src="<?php echo base_url('assets/jquery/jquery-2.1.4.min.js')?>"></script>
 <script src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js')?>"></script>
